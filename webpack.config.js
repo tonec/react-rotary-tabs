@@ -1,4 +1,3 @@
-var webpack = require('webpack')
 var path = require('path')
 
 const BUILD_DIR = path.resolve(__dirname, 'dist')
