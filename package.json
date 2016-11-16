@@ -1,0 +1,11 @@
+{
+  "name": "tabs-react",
+  "version": "1.0.0",
+  "description": "Tabs component for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tony Coop",
+  "license": "ISC"
+}
