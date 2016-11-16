@@ -7,7 +7,7 @@ const config = {
   entry: APP_DIR + '/index.js',
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js'
+    filename: 'react-auto-tabs.js'
   },
   module: {
     loaders: [
