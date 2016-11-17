@@ -8,6 +8,7 @@ const TabsMenu = (props) => {
         return (
           <TabsMenuItem
             key={item.index}
+            tabId={item.index}
             title={item.title}
           />
         )
