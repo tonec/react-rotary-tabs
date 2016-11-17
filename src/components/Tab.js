@@ -1,12 +1,10 @@
 import React from 'react'
 
 const Tab = (props) => {
+  console.log()
   return (
     <div>
-      <h4>{props.title}</h4>
-      <div>
-        {props.content}
-      </div>
+      {props.contentData.content}
     </div>
   )
 }

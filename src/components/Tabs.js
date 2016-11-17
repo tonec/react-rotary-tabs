@@ -5,24 +5,51 @@ class Tabs extends Component {
 
   constructor (props) {
     super(props)
-    const { data, activeTab } = this.props
 
     this.state = {
-        menuItems: data.map(tab => tab.title),
-        contentItems: data.map(tab => tab.content),
-        activeTab: activeTab
+      activeTab: this.props.activeTab
     }
   }
 
+  renderTabsMenu (data) {
+    const menuItemArray = data.map((tab, index) => {
+        return {
+          index: index,
+          title: tab.title
+        }
+    })
+
+    return (
+      <TabsMenu
+        menuItems={menuItemArray}
+      />
+    )
+  }
+
+  renderTab (data, activeTab) {
+    const contentArray = data.map((tab, index) => {
+      return {
+        index: index,
+        content: tab.content
+      }
+    })
+
+    const currentContent = contentArray.filter((item) => item.index === activeTab)[0]
+
+    return (
+      <Tab
+        contentData={currentContent}
+      />
+    )
+  }
+
   render () {
+    const { data } = this.props
+
     return (
       <div>
-        <TabsMenu
-          menuItems={this.state.menuItems}
-        />
-        <Tab
-          contentItems={this.state.contentItems}
-        />
+        {this.renderTabsMenu(data)}
+        {this.renderTab(data, this.state.activeTab)}
       </div>
     )
   }
