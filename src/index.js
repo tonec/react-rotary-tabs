@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { Tabs, Tab } from './components/'
+import { Tabs } from './components/'
 
 class App extends Component {
 
@@ -19,16 +19,11 @@ class App extends Component {
     return (
       <div>
         <h1>Auto-rotatable tabs</h1>
-        <Tabs>
-          {this.tabs.map((tab) => {
-            return (
-              <Tab
-                title={tab.title}
-                content={tab.content}
-              />
-            )
-          })}
-        </Tabs>
+
+        <Tabs
+          data={this.tabs}
+        />
+
       </div>
     )
   }

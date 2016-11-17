@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Tab extends Component {
-  render () {
-    return (
+const Tab = (props) => {
+  return (
+    <div>
+      <h4>{props.title}</h4>
       <div>
-        <h4>{this.props.title}</h4>
-        <div>
-          {this.props.content}
-        </div>
+        {props.content}
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export { Tab }
