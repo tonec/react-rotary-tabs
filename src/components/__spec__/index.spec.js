@@ -1,5 +1,3 @@
-import React from 'react'
-import { mount, shallow } from 'enzyme'
 import {expect} from 'chai'
 
 import { Tabs, Tab, TabsMenu, TabsMenuItem } from '../index'
@@ -16,5 +14,4 @@ describe('Components index.js', () => {
     expect(TabsMenu).to.equal(TabsMenuComponent)
     expect(TabsMenuItem).to.equal(TabsMenuItemComponent)
   })
-
 })
