@@ -12,6 +12,9 @@ class Tabs extends Component {
 
   handleClick (e) {
     const targetTab = Number.parseInt(e.target.getAttribute('data-menu-item-id'))
+
+    if (isNaN(targetTab)) return
+
     this.setState({ activeTab: targetTab })
   }
 
