@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { TabsMenu, Tab } from './'
 
+import styles from '../scss/tabs.scss'
+
 class Tabs extends Component {
 
   constructor (props) {
@@ -39,7 +41,7 @@ class Tabs extends Component {
   renderTab (data, activeTab) {
 
     if (!data) return
-    
+
     const contentArray = data.map((tab, index) => {
       return {
         index: index,
@@ -59,7 +61,7 @@ class Tabs extends Component {
     const { data } = this.props
 
     return (
-      <div onClick={this.handleClick.bind(this)}>
+      <div className='tabs' onClick={this.handleClick.bind(this)}>
         {this.renderTabsMenu(data)}
         {this.renderTab(data, this.state.activeTab)}
       </div>

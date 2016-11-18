@@ -3,7 +3,7 @@ import { TabsMenuItem } from './'
 
 const TabsMenu = (props) => {
   return (
-    <ul>
+    <ul className='tabs-menu'>
       {props.menuItems.map((item) => {
         return (
           <TabsMenuItem

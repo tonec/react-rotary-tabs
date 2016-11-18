@@ -2,7 +2,7 @@ import React from 'react'
 
 const Tab = (props) => {
   return (
-    <div>
+    <div className='tab'>
       {props.contentData.content}
     </div>
   )
