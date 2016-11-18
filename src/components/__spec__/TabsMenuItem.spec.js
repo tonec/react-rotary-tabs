@@ -6,7 +6,7 @@ import { TabsMenuItem } from '../'
 
 describe('<TabsMenuItem />', () => {
 
-  it('should inlude a li element', () => {
+  it('should include a li element', () => {
     const wrapper = shallow(<TabsMenuItem />)
     expect(wrapper.find('li')).to.have.length(1)
   })
