@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Tabs } from './components/'
 
-import data from '../test/data'
+import data from './data'
 
 class App extends Component {
 
