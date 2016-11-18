@@ -69,4 +69,4 @@ Tabs.defaultProps = {
   activeTab: 0
 }
 
-export { Tabs }
+export default Tabs

@@ -8,4 +8,4 @@ const TabsMenuItem = (props) => {
   )
 }
 
-export { TabsMenuItem }
+export default TabsMenuItem

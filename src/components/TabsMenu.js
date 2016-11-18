@@ -17,4 +17,4 @@ const TabsMenu = (props) => {
   )
 }
 
-export { TabsMenu }
+export default TabsMenu
