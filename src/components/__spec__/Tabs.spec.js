@@ -1,8 +1,8 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { expect } from 'chai'
 
-import { Tabs } from '../'
+import { Tabs, Tab, TabsMenu } from '../'
 import data from '../../../test/data'
 
 describe('<Tabs/>', () => {
@@ -16,6 +16,21 @@ describe('<Tabs/>', () => {
     const wrapper = mount(<Tabs activeTab={1} />)
     expect(wrapper.prop('activeTab')).to.equal(1)
     expect(wrapper.prop('activeTab')).to.not.equal(0)
+  })
+
+  it('should have an initial state equal to the activeTab property', () => {
+    const wrapper = mount(<Tabs activeTab={1} />)
+    expect(wrapper.state().activeTab).to.equal(1)
+  })
+
+  it('should contain a TabMenu', () => {
+    const wrapper = mount(<Tabs data={data} />)
+    expect(wrapper.find(TabsMenu)).to.have.length(1)
+  })
+
+  it('should contain a Tab', () => {
+    const wrapper = mount(<Tabs data={data} />)
+    expect(wrapper.find(Tab)).to.have.length(1)
   })
 
 })
