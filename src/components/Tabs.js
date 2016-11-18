@@ -5,6 +5,7 @@ class Tabs extends Component {
 
   constructor (props) {
     super(props)
+
     this.state = {
       activeTab: this.props.activeTab
     }
@@ -19,6 +20,9 @@ class Tabs extends Component {
   }
 
   renderTabsMenu (data) {
+
+    if (!data) return
+
     const menuItemArray = data.map((tab, index) => {
         return {
           index: index,
@@ -33,6 +37,9 @@ class Tabs extends Component {
   }
 
   renderTab (data, activeTab) {
+
+    if (!data) return
+    
     const contentArray = data.map((tab, index) => {
       return {
         index: index,
