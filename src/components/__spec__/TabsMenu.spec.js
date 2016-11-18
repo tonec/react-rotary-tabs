@@ -19,7 +19,7 @@ describe('<TabsMenu />', () => {
   it('should render the correct menu items', () => {
     const wrapper = mount(<TabsMenu menuItems={menuItemArray} />)
     expect(wrapper.find('li')).to.have.length(2)
-    expect(wrapper.childAt(0).text()).to.equal('Title 1')
-    expect(wrapper.childAt(1).text()).to.equal('Title 2')
+    expect(wrapper.childAt(0).text()).to.equal(menuItemArray[0].title)
+    expect(wrapper.childAt(1).text()).to.equal(menuItemArray[1].title)
   })
 })
