@@ -34,6 +34,9 @@ describe('<Tabs/>', () => {
     expect(wrapper.find(TabsMenu)).to.have.length(1)
     expect(wrapper.find(TabsMenu).find('li')).to.have.length(4)
     expect(wrapper.find(TabsMenu).childAt(0).text()).to.equal(data[0].title)
+    expect(wrapper.find(TabsMenu).childAt(1).text()).to.equal(data[1].title)
+    expect(wrapper.find(TabsMenu).childAt(2).text()).to.equal(data[2].title)
+    expect(wrapper.find(TabsMenu).childAt(3).text()).to.equal(data[3].title)
   })
 
   it('should contain a correctly rendered Tab', () => {
