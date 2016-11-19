@@ -6,12 +6,16 @@ import { Tabs, Tab, TabsMenu } from '../'
 
 describe('<Tabs/>', () => {
 
-  const data = [
-    { title: 'Tab 1 title', content: 'Tab 1 content.' },
-    { title: 'Tab 2 title', content: 'Tab 2 content.' },
-    { title: 'Tab 3 title', content: 'Tab 3 content.' },
-    { title: 'Tab 4 title', content: 'Tab 4 content.' }
-  ]
+  let data
+
+  beforeEach(() => {
+    data = [
+      { title: 'Tab 1 title', content: 'Tab 1 content.' },
+      { title: 'Tab 2 title', content: 'Tab 2 content.' },
+      { title: 'Tab 3 title', content: 'Tab 3 content.' },
+      { title: 'Tab 4 title', content: 'Tab 4 content.' }
+    ]
+  })
 
   it('should have a sensible default for activeTab which must be a number', () => {
     const wrapper = mount(<Tabs data={data} activeTab={1} />)
