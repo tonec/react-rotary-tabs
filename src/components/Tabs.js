@@ -8,7 +8,6 @@ class Tabs extends Component {
 
     this.state = {
       activeTab: this.props.activeTab,
-      menuItems: [],
       contentItems: []
     }
   }
@@ -16,13 +15,6 @@ class Tabs extends Component {
   componentWillMount () {
 
     if (!this.props.data) return
-
-    const menuItems = this.props.data.map((tab, index) => {
-        return {
-          index: index,
-          title: tab.title
-        }
-    })
 
     const contentItems = this.props.data.map((tab, index) => {
       return {
@@ -32,7 +24,6 @@ class Tabs extends Component {
     })
 
     this.setState({
-      menuItems: menuItems,
       contentItems: contentItems
     })
   }
@@ -45,10 +36,10 @@ class Tabs extends Component {
     this.setState({ activeTab: targetTab })
   }
 
-  renderTabsMenu (menuItems, activeTab) {
+  renderTabsMenu (data, activeTab) {
     return (
       <TabsMenu
-        menuItems={menuItems}
+        data={data}
         activeTab={activeTab}
       />
     )
@@ -66,7 +57,7 @@ class Tabs extends Component {
   render () {
     return (
       <div className='tabs' onClick={this.handleClick.bind(this)}>
-        {this.renderTabsMenu(this.state.menuItems, this.state.activeTab)}
+        {this.renderTabsMenu(this.props.data, this.state.activeTab)}
         {this.renderTab(this.state.contentItems, this.state.activeTab)}
       </div>
     )

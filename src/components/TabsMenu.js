@@ -4,13 +4,13 @@ import { TabsMenuItem } from './'
 const TabsMenu = (props) => {
   return (
     <ul className='tabs-menu'>
-      {props.menuItems.map((item) => {
+      {props.data.map((item, index) => {
         return (
           <TabsMenuItem
-            key={item.index}
-            tabId={item.index}
+            key={'menu-item-' + index}
+            tabId={index}
             title={item.title}
-            active={(props.activeTab === item.index)}
+            active={(props.activeTab === index)}
           />
         )
       })}
