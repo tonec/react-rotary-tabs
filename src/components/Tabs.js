@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { TabsMenu, Tab } from './'
 
-import styles from '../scss/tabs.scss'
+import '../scss/tabs.scss'
 
 class Tabs extends Component {
 
