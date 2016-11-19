@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { Tabs } from './components/'
+import BasicTabs from './examples/BasicTabs/BasicTabs'
 
-import data from './data'
+import data from './examples/data'
 
-class App extends Component {
+class Main extends Component {
 
   constructor (props) {
     super(props)
@@ -17,7 +17,7 @@ class App extends Component {
       <div>
         <h1>Auto-rotatable tabs</h1>
 
-        <Tabs
+        <BasicTabs
           data={this.tabs}
         />
 
@@ -26,4 +26,4 @@ class App extends Component {
   }
 }
 
-render(<App/>, document.getElementById('app'))
+render(<Main/>, document.getElementById('app'))

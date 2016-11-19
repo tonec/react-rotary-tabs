@@ -1,10 +1,10 @@
 var path = require('path')
 
 const BUILD_DIR = path.resolve(__dirname, 'dist')
-const APP_DIR = path.resolve(__dirname, 'src')
+const APP_DIR = path.resolve(__dirname, './')
 
 const config = {
-  entry: APP_DIR + '/index.js',
+  entry: './main.js',
   devServer: {
     hot: true,
     inline: true,

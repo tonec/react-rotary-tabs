@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { TabsMenu, Tab } from './'
 
-import '../scss/tabs.scss'
-
 class Tabs extends Component {
 
   constructor (props) {
