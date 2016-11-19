@@ -1,8 +1,12 @@
 import React from 'react'
+import cs from 'classnames'
 
 const TabsMenuItem = (props) => {
   return (
-    <li data-menu-item-id={props.tabId}>
+    <li
+      className={cs({ active: props.active })}
+      data-menu-item-id={props.tabId}
+    >
       {props.title}
     </li>
   )

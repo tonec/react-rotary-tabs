@@ -21,7 +21,7 @@ class Tabs extends Component {
     this.setState({ activeTab: targetTab })
   }
 
-  renderTabsMenu (data) {
+  renderTabsMenu (data, activeTab) {
 
     if (!data) return
 
@@ -34,6 +34,7 @@ class Tabs extends Component {
     return (
       <TabsMenu
         menuItems={menuItemArray}
+        activeTab={activeTab}
       />
     )
   }
@@ -62,7 +63,7 @@ class Tabs extends Component {
 
     return (
       <div className='tabs' onClick={this.handleClick.bind(this)}>
-        {this.renderTabsMenu(data)}
+        {this.renderTabsMenu(data, this.state.activeTab)}
         {this.renderTab(data, this.state.activeTab)}
       </div>
     )

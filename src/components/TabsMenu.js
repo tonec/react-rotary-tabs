@@ -10,6 +10,7 @@ const TabsMenu = (props) => {
             key={item.index}
             tabId={item.index}
             title={item.title}
+            active={(props.activeTab === item.index)}
           />
         )
       })}
