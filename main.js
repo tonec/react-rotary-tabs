@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import BasicTabs from './examples/BasicTabs/BasicTabs'
+import RotaryTabs from './examples/RotaryTabs/RotaryTabs'
 
 import data from './examples/data'
 
@@ -18,6 +19,10 @@ class Main extends Component {
         <h1>Auto-rotatable tabs</h1>
 
         <BasicTabs
+          data={this.tabs}
+        />
+
+        <RotaryTabs
           data={this.tabs}
         />
 
