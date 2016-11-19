@@ -9,8 +9,34 @@ class Tabs extends Component {
     super(props)
 
     this.state = {
-      activeTab: this.props.activeTab
+      activeTab: this.props.activeTab,
+      menuItems: [],
+      contentItems: []
     }
+  }
+
+  componentWillMount () {
+
+    if (!this.props.data) return
+
+    const menuItems = this.props.data.map((tab, index) => {
+        return {
+          index: index,
+          title: tab.title
+        }
+    })
+
+    const contentItems = this.props.data.map((tab, index) => {
+      return {
+        index: index,
+        content: tab.content
+      }
+    })
+
+    this.setState({
+      menuItems: menuItems,
+      contentItems: contentItems
+    })
   }
 
   handleClick (e) {
@@ -21,36 +47,17 @@ class Tabs extends Component {
     this.setState({ activeTab: targetTab })
   }
 
-  renderTabsMenu (data, activeTab) {
-
-    if (!data) return
-
-    const menuItemArray = data.map((tab, index) => {
-        return {
-          index: index,
-          title: tab.title
-        }
-    })
+  renderTabsMenu (menuItems, activeTab) {
     return (
       <TabsMenu
-        menuItems={menuItemArray}
+        menuItems={menuItems}
         activeTab={activeTab}
       />
     )
   }
 
-  renderTab (data, activeTab) {
-
-    if (!data) return
-
-    const contentArray = data.map((tab, index) => {
-      return {
-        index: index,
-        content: tab.content
-      }
-    })
-    const currentContent = contentArray.filter((item) => item.index === activeTab)[0]
-
+  renderTab (contentItems, activeTab) {
+    const currentContent = contentItems.filter((item) => item.index === activeTab)[0]
     return (
       <Tab
         contentData={currentContent}
@@ -59,12 +66,10 @@ class Tabs extends Component {
   }
 
   render () {
-    const { data } = this.props
-
     return (
       <div className='tabs' onClick={this.handleClick.bind(this)}>
-        {this.renderTabsMenu(data, this.state.activeTab)}
-        {this.renderTab(data, this.state.activeTab)}
+        {this.renderTabsMenu(this.state.menuItems, this.state.activeTab)}
+        {this.renderTab(this.state.contentItems, this.state.activeTab)}
       </div>
     )
   }
