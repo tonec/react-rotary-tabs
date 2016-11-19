@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Tabs } from '../../src/components/'
-import { withRotary } from '../../src/components/withRotary'
+import { withRotary } from '../../src/addons/withRotary'
 
 import './BasicTabs.scss'
 
@@ -8,9 +8,7 @@ import './BasicTabs.scss'
 class BasicTabs extends Component {
   render () {
     return (
-      <Tabs
-        data={this.props.data}
-      />
+      <Tabs { ...this.props }/>
     )
   }
 }
