@@ -18,4 +18,9 @@ describe('<TabsMenuItem />', () => {
     expect(wrapper.props()['data-menu-item-id']).to.equal('test-tab-id')
     expect(wrapper.props().children).to.equal('Test title')
   })
+
+  it('should have the active class name is currently active', () => {
+    const wrapper = shallow(<TabsMenuItem active={true} />)
+    expect(wrapper.hasClass('active')).to.equal(true)
+  })
 })

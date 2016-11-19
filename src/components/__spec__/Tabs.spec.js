@@ -46,6 +46,7 @@ describe('<Tabs/>', () => {
     const wrapper = mount(<Tabs data={data} />)
     wrapper.find(TabsMenu).childAt(2).simulate('click')
     expect(wrapper.state('activeTab')).to.equal(2)
+    expect(wrapper.find(TabsMenu).find('li').at(2).hasClass('active')).to.equal(true)
     expect(wrapper.find(Tab).text()).to.equal(data[2].content)
   })
 })
