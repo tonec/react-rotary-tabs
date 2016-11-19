@@ -42,11 +42,21 @@ describe('<Tabs/>', () => {
     expect(wrapper.find(Tab).text()).to.equal(data[1].content)
   })
 
-  it('should update the tab when a menu item is clicked', () => {
+  it('should update the activeTab state when a menu item is clicked', () => {
     const wrapper = mount(<Tabs data={data} />)
     wrapper.find(TabsMenu).childAt(2).simulate('click')
     expect(wrapper.state('activeTab')).to.equal(2)
+  })
+
+  it('should update the menu item class name when a menu item is clicked', () => {
+    const wrapper = mount(<Tabs data={data} />)
+    wrapper.find(TabsMenu).childAt(2).simulate('click')
     expect(wrapper.find(TabsMenu).find('li').at(2).hasClass('active')).to.equal(true)
+  })
+
+  it('should display the correct tab content when a menu item is clicked', () => {
+    const wrapper = mount(<Tabs data={data} />)
+    wrapper.find(TabsMenu).childAt(2).simulate('click')
     expect(wrapper.find(Tab).text()).to.equal(data[2].content)
   })
 })
