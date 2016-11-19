@@ -4,9 +4,10 @@ const withRotary = (WrapperComponent) => {
   return class extends Component {
 
     render () {
-      return <WrapperComponent { ...this.props } />
+      const newProps = { rotatin: true }
+      return <WrapperComponent { ...this.props } { ...newProps } />
     }
   }
 }
 
-export default withRotary
+export { withRotary }
