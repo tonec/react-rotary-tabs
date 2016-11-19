@@ -1,6 +1,6 @@
 .tabs {
   flex: 1;
-  margin: 40px 0;
+  margin: 20px 0 40px;
 }
 
 .tabs-menu {
@@ -24,6 +24,14 @@
     margin: 0 4px 0;
     font-size: 14px;
     cursor: pointer;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &.active {
       background-color: #ebebeb;

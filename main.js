@@ -5,6 +5,8 @@ import RotaryTabs from './examples/RotaryTabs/RotaryTabs'
 
 import data from './examples/data'
 
+import './examples/styles/tabs.scss'
+
 class Main extends Component {
 
   constructor (props) {
@@ -16,12 +18,14 @@ class Main extends Component {
   render () {
     return (
       <div>
-        <h1>Auto-rotatable tabs</h1>
+        <h1>React Rotary Tabs</h1>
 
+        <h2>Basic Tabs</h2>
         <BasicTabs
           data={this.tabs}
         />
 
+        <h2>Rotary Tabs</h2>
         <RotaryTabs
           data={this.tabs}
         />
