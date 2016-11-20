@@ -5,9 +5,8 @@ const withRotary = (WrapperComponent) => {
 
     constructor (props) {
       super(props)
-
       this.state = {
-        activeTab: this.props.initialActiveTab
+        activeTab: null
       }
     }
 
