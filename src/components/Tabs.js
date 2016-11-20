@@ -7,7 +7,7 @@ class Tabs extends Component {
     super(props)
 
     this.state = {
-      activeTab: this.props.activeTab,
+      activeTab: this.props.initialActiveTab,
       contentItems: []
     }
   }
@@ -80,11 +80,11 @@ class Tabs extends Component {
 
 Tabs.propTypes = {
   data: PropTypes.array,
-  activeTab: PropTypes.number
+  initialActiveTab: PropTypes.number
 }
 
 Tabs.defaultProps = {
-  activeTab: 0
+  initialActiveTab: 0
 }
 
 export default Tabs

@@ -18,18 +18,18 @@ describe('<Tabs/>', () => {
   })
 
   it('should have a sensible default for activeTab which must be a number', () => {
-    const wrapper = mount(<Tabs data={data} activeTab={1} />)
+    const wrapper = mount(<Tabs data={data} initialActiveTab={1} />)
     expect(wrapper.state('activeTab')).to.be.a('number')
   })
 
-  it('should accept a property to change the activeTab', () => {
-    const wrapper = mount(<Tabs data={data} activeTab={1} />)
-    expect(wrapper.prop('activeTab')).to.equal(1)
-    expect(wrapper.prop('activeTab')).to.not.equal(0)
+  it('should accept a property to change the initial activeTab', () => {
+    const wrapper = mount(<Tabs data={data} initialActiveTab={1} />)
+    expect(wrapper.prop('initialActiveTab')).to.equal(1)
+    expect(wrapper.prop('initialActiveTab')).to.not.equal(0)
   })
 
   it('should have an initial state equal to the activeTab property', () => {
-    const wrapper = mount(<Tabs data={data} activeTab={1} />)
+    const wrapper = mount(<Tabs data={data} initialActiveTab={1} />)
     expect(wrapper.state().activeTab).to.equal(1)
   })
 
@@ -44,7 +44,7 @@ describe('<Tabs/>', () => {
   })
 
   it('should contain a correctly rendered Tab', () => {
-    const wrapper = mount(<Tabs data={data} activeTab={1} />)
+    const wrapper = mount(<Tabs data={data} initialActiveTab={1} />)
     expect(wrapper.find(Tab)).to.have.length(1)
     expect(wrapper.find(Tab).text()).to.equal(data[1].content)
   })
