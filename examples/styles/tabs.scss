@@ -15,7 +15,10 @@
   z-index: 2;
 
   li {
+    display: flex;
     flex: 1;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background-color: #cdcdcd;
     border: 1px solid #c5c5c5;
