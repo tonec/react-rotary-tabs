@@ -7,21 +7,41 @@ const withRotary = (WrapperComponent) => {
       super(props)
 
       this.state = {
-        rotating: true,
-        numRotations: null
+        activeTab: this.props.activeTab,
+        contentLen: this.props.data.length
       }
     }
 
-    componentWillMount () {
-      this.rotaryEvents()
+    initRotary (rotaryOpts) {
+      this.setState({
+        activeTab: rotaryOpts.activeTab || 0
+      })
+
+      this.cycle(rotaryOpts)
     }
 
-    rotaryEvents () {
-      this.rotary = {
-        next: function () {
-          // console.log('rrs: ', this.state)
+    cycle (rotaryOpts) {
+      let count = rotaryOpts.cycles
+
+      const timer = setInterval(() => {
+        let nextActiveTab
+
+        if (this.state.activeTab < this.state.contentLen - 1) {
+          nextActiveTab = this.state.activeTab + 1
+        } else {
+          nextActiveTab = 0
+          count--
         }
-      }
+
+        this.setState({
+          activeTab: nextActiveTab
+        })
+
+        if (count === 0) {
+          clearInterval(timer)
+        }
+
+      }, rotaryOpts.speed)
     }
 
     render () {
@@ -29,11 +49,11 @@ const withRotary = (WrapperComponent) => {
         <WrapperComponent
           { ...this.props }
           { ...this.state }
-          rotary={this.rotary}
+          initRotary={this.initRotary.bind(this)}
         />
       )
     }
   }
 }
 
-export { withRotary }
+export default withRotary

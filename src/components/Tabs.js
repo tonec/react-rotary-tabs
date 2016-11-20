@@ -30,32 +30,16 @@ class Tabs extends Component {
 
   componentDidMount () {
     if (this.props.rotary) {
-      this.cycleTabs()
+      this.props.initRotary(this.props.rotaryOpts)
     }
   }
 
-  cycleTabs () {
-    let count = this.props.rotaryOpts.cycles
-
-    const timer = setInterval(() => {
-      let nextActiveTab
-
-      if (this.state.activeTab < this.state.contentItems.length - 1) {
-        nextActiveTab = this.state.activeTab + 1
-      } else {
-        nextActiveTab = 0
-        count--
-      }
-
+  componentWillReceiveProps (newProps) {
+    if (this.props.rotary && newProps.activeTab !== this.state.activeTab) {
       this.setState({
-        activeTab: nextActiveTab
+        activeTab: newProps.activeTab
       })
-
-      if (count === 0) {
-        clearInterval(timer)
-      }
-
-    }, this.props.rotaryOpts.speed)
+    }
   }
 
   handleClick (e) {

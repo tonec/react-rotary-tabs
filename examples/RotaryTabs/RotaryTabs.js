@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import { Tabs } from '../../src/components/'
+import withRotary from '../../src/addons/withRotary'
 
+@withRotary
 class RotaryTabs extends Component {
   render () {
     const rotaryOpts = {
       cycles: 2,
-      speed: 1000
+      speed: 1000,
+      activeTab: 0
     }
 
     return (
