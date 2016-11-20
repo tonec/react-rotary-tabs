@@ -5,27 +5,9 @@ class Tabs extends Component {
 
   constructor (props) {
     super(props)
-
     this.state = {
-      activeTab: this.props.initialActiveTab,
-      contentItems: []
+      activeTab: this.props.initialActiveTab
     }
-  }
-
-  componentWillMount () {
-
-    if (!this.props.data) return
-
-    const contentItems = this.props.data.map((tab, index) => {
-      return {
-        index: index,
-        content: tab.content
-      }
-    })
-
-    this.setState({
-      contentItems: contentItems
-    })
   }
 
   componentDidMount () {
@@ -44,9 +26,7 @@ class Tabs extends Component {
 
   handleClick (e) {
     const targetTab = Number.parseInt(e.target.getAttribute('data-menu-item-id'))
-
     if (isNaN(targetTab)) return
-
     this.setState({ activeTab: targetTab })
   }
 
@@ -59,8 +39,8 @@ class Tabs extends Component {
     )
   }
 
-  renderTab (contentItems, activeTab) {
-    const currentContent = contentItems.filter((item) => item.index === activeTab)[0]
+  renderTab (data, activeTab) {
+    const currentContent = data.filter((item, index) => index === activeTab)[0]
     return (
       <Tab
         contentData={currentContent}
@@ -72,7 +52,7 @@ class Tabs extends Component {
     return (
       <div className='tabs' onClick={this.handleClick.bind(this)}>
         {this.renderTabsMenu(this.props.data, this.state.activeTab)}
-        {this.renderTab(this.state.contentItems, this.state.activeTab)}
+        {this.renderTab(this.props.data, this.state.activeTab)}
       </div>
     )
   }

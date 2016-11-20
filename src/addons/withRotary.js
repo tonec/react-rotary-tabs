@@ -7,8 +7,7 @@ const withRotary = (WrapperComponent) => {
       super(props)
 
       this.state = {
-        activeTab: this.props.activeTab,
-        contentLen: this.props.data.length
+        activeTab: this.props.initialActiveTab
       }
     }
 
@@ -26,7 +25,7 @@ const withRotary = (WrapperComponent) => {
       const timer = setInterval(() => {
         let nextActiveTab
 
-        if (this.state.activeTab < this.state.contentLen - 1) {
+        if (this.state.activeTab < this.props.data.length - 1) {
           nextActiveTab = this.state.activeTab + 1
         } else {
           nextActiveTab = 0
