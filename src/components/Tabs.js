@@ -58,10 +58,10 @@ class Tabs extends Component {
 
   render () {
     /* eslint-disable
-      jsx-a11y/no-static-element-interactions,
-      jsx-a11y/click-events-have-key-events,
-      jsx-a11y/onclick-has-focus,
-      jsx-a11y/onclick-has-role
+    jsx-a11y/no-static-element-interactions,
+    jsx-a11y/click-events-have-key-events,
+    jsx-a11y/onclick-has-focus,
+    jsx-a11y/onclick-has-role
     */
     return (
       <div
