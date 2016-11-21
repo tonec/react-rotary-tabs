@@ -5,9 +5,12 @@ class Tabs extends Component {
 
   constructor (props) {
     super(props)
+
     this.state = {
       activeTab: this.props.initialActiveTab
     }
+
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount () {
@@ -54,7 +57,10 @@ class Tabs extends Component {
 
   render () {
     return (
-      <div className='tabs' onClick={this.handleClick.bind(this)}>
+      <div
+        className='tabs'
+        onClick={this.handleClick}
+      >
         {this.renderTabsMenu(this.props.data, this.state.activeTab)}
         {this.renderTab(this.props.data, this.state.activeTab)}
       </div>
