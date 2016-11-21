@@ -66,4 +66,9 @@ describe('<Tabs/>', () => {
     wrapper.find(TabsMenu).childAt(2).find('a').simulate('click')
     expect(wrapper.find(Tab).text()).to.equal(data[2].content)
   })
+
+  it('should add an additional class to the container if one is provided through props', () => {
+    const wrapper = mount(<Tabs data={data} className={'test'} />)
+    expect(wrapper.find('div').first().hasClass('tabs-test')).to.equal(true)
+  })
 })

@@ -16,6 +16,7 @@ class RotaryTabs extends Component {
         { ...this.props }
         rotary={true}
         rotaryOpts={rotaryOpts}
+        className={'rotary'}
       />
     )
   }

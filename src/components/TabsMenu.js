@@ -1,9 +1,10 @@
 import React from 'react'
+import cn from 'classnames'
 import { TabsMenuItem } from './'
 
 const TabsMenu = (props) => {
   return (
-    <ul className='tabs-menu'>
+    <ul className={cn('tabs-menu', `tabs-menu-${props.className}`)}>
       {props.data.map((item, index) => {
         return (
           <TabsMenuItem

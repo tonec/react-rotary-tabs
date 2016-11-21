@@ -4,7 +4,10 @@ import { Tabs } from '../../src/components/'
 class BasicTabs extends Component {
   render () {
     return (
-      <Tabs { ...this.props } />
+      <Tabs
+        className={'basic'}
+        { ...this.props }
+      />
     )
   }
 }

@@ -40,4 +40,9 @@ describe('<TabsMenu />', () => {
     expect(wrapper.find('li').at(0).hasClass('active')).to.equal(false)
     expect(wrapper.find('li').at(1).hasClass('active')).to.equal(true)
   })
+
+  it('should add an additional class to the container if one is provided through props', () => {
+    const wrapper = shallow(<TabsMenu data={data} className={'test'} />)
+    expect(wrapper.find('ul').hasClass('tabs-menu-test')).to.equal(true)
+  })
 })

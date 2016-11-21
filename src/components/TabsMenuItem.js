@@ -1,10 +1,10 @@
 import React from 'react'
-import cs from 'classnames'
+import cn from 'classnames'
 
 const TabsMenuItem = (props) => {
   return (
     <li
-      className={cs({ active: props.active })}
+      className={cn({ active: props.active })}
     >
       <a
         href=''

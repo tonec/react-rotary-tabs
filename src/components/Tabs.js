@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import cn from 'classnames'
 import { TabsMenu, Tab } from './'
 
 class Tabs extends Component {
@@ -41,6 +42,7 @@ class Tabs extends Component {
   renderTabsMenu (data, activeTab) {
     return (
       <TabsMenu
+        { ...this.props }
         data={data}
         activeTab={activeTab}
       />
@@ -51,12 +53,16 @@ class Tabs extends Component {
     const currentContent = data.filter((item, index) => index === activeTab)[0]
     return (
       <Tab
+        { ...this.props }
         contentData={currentContent}
       />
     )
   }
 
   render () {
+    const { data, className } = this.props
+    const { activeTab } = this.state
+
     /* eslint-disable
     jsx-a11y/no-static-element-interactions,
     jsx-a11y/click-events-have-key-events,
@@ -65,11 +71,11 @@ class Tabs extends Component {
     */
     return (
       <div
-        className='tabs'
+        className={cn('tabs', `tabs-${className}`)}
         onClick={this.handleClick}
       >
-        {this.renderTabsMenu(this.props.data, this.state.activeTab)}
-        {this.renderTab(this.props.data, this.state.activeTab)}
+        {this.renderTabsMenu(data, activeTab)}
+        {this.renderTab(data, activeTab)}
       </div>
     )
   }
@@ -77,6 +83,7 @@ class Tabs extends Component {
 
 Tabs.propTypes = {
   data: PropTypes.array,
+  className: PropTypes.string,
   initialActiveTab: PropTypes.number
 }
 
