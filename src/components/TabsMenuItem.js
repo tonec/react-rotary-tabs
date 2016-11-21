@@ -5,10 +5,14 @@ const TabsMenuItem = (props) => {
   return (
     <li
       className={cs({ active: props.active })}
-      data-menu-item-id={props.tabId}
-      onClick={props.handleClick}
     >
-      {props.title}
+      <a
+        href=''
+        onClick={props.handleClick}
+        data-menu-item-id={props.tabId}
+      >
+        {props.title}
+      </a>
     </li>
   )
 }
