@@ -6,6 +6,7 @@ const TabsMenuItem = (props) => {
     <li
       className={cs({ active: props.active })}
       data-menu-item-id={props.tabId}
+      onClick={props.handleClick}
     >
       {props.title}
     </li>
