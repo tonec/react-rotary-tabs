@@ -12,7 +12,7 @@ const withRotary = (WrapperComponent) => {
 
     initRotary (rotaryOpts) {
       this.setState({
-        activeTab: rotaryOpts.activeTab || 0
+        activeTab: rotaryOpts.initialActiveTab || 0
       })
 
       this.cycle(rotaryOpts)

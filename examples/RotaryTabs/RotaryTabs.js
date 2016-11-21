@@ -8,7 +8,7 @@ class RotaryTabs extends Component {
     const rotaryOpts = {
       cycles: 2,
       speed: 1000,
-      activeTab: 0
+      initialActiveTab: 0
     }
 
     return (
