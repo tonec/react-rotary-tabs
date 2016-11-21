@@ -1,6 +1,7 @@
 {
   'extends': [
-    'standard'
+    'standard',
+    'plugin:jsx-a11y/recommended'
   ],
   'plugins': [
     'import',
