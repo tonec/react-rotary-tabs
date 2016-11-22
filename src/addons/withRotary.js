@@ -31,15 +31,19 @@ const withRotary = (WrapperComponent) => {
           count--
         }
 
-        this.setState({
-          activeTab: nextActiveTab
-        })
+        this.cycleToNextTab(nextActiveTab)
 
         if (count === 0) {
           clearInterval(timer)
         }
 
       }, rotaryOpts.speed)
+    }
+
+    cycleToNextTab (nextActiveTab) {
+      this.setState({
+        activeTab: nextActiveTab
+      })
     }
 
     render () {
