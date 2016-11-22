@@ -1,8 +1,0 @@
-const data = [
-  { title: 'Tab 1 title', content: 'Tab 1 content. Lorem ipsum dolor sit amet, equidem veritus laboramus ea est, elit quaestio et nec, eum in nobis omnes definitiones. Id vis mucius deleniti similique, vix minimum singulis et. Liber audire oporteat no per. Et assum assentior sit. Graece delectus dissentiet in sit, id sed atqui laoreet, pro vitae delicata ne. Suas disputationi vel no, aeque everti ex eum.' },
-  { title: 'Tab 2 title', content: 'Tab 2 content. Lorem ipsum dolor sit amet, equidem veritus laboramus ea est, elit quaestio et nec, eum in nobis omnes definitiones.' },
-  { title: 'Tab 3 title', content: 'Tab 3 content. Id vis mucius deleniti similique, vix minimum singulis et. Liber audire oporteat no per. Et assum assentior sit. Graece delectus dissentiet in sit, id sed atqui laoreet, pro vitae delicata ne. Suas disputationi vel no, aeque everti ex eum.' },
-  { title: 'Tab 4 title', content: 'Tab 4 content. Lorem ipsum dolor sit amet, equidem veritus laboramus ea est, elit quaestio et nec, eum in nobis omnes definitiones. Id vis mucius deleniti similique, vix minimum singulis et. Liber audire oporteat no per. Et assum assentior sit. Graece delectus dissentiet in sit, id sed atqui laoreet, pro vitae delicata ne. Suas disputationi vel no, aeque everti ex eum.' }
-]
-
-export default data
